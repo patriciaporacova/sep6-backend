@@ -5,6 +5,4 @@ steps:
   args: ['push', 'gcr.io/sep6-group2/sep6:$SHORT_SHA']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['run', 'deploy', 'sep6', '--region=europe-west1', '--platform=managed', '--image=gcr.io/sep6-group2/sep6:$SHORT_SHA']
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'db', '--region=europe-west1', '--platform=managed', '--image=mysql:5.7']
 

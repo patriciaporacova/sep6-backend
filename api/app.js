@@ -16,8 +16,8 @@ app.use(myConnection(mysql, process.env.DATABASE_URL, 'single'));
 app.use(cors());
 app.use(routes);
 
-app.listen(port, function(){
-	console.log("app listening on port: " + port);
+app.listen(port, function () {
+    console.log("app listening on port: " + port);
 });
 
 

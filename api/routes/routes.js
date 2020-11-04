@@ -8,8 +8,6 @@ router.get('/', function (req, res) {
         connection.query(q, function (error, results, fields) {
             if (error) throw error;
             console.log("rendering home page . . .");
-            console.log(results);
-            console.log(fields);
             res.setHeader('content-type', 'application/json');
             res.send(results);
         });
