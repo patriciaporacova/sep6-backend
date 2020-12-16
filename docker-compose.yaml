@@ -10,7 +10,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=united_airplanes_db
     volumes:
-      - database:/var/lib/mysql
+      -  database:/var/lib/mysql
       - ./db/dump:/docker-entrypoint-initdb.d
     networks:
       - sep6_airplanes_network
@@ -27,6 +27,13 @@ services:
       - sep6_airplanes_network
     volumes:
       - ./api:/usr/src/app
+
+  client:
+    build: ./client
+    volumes:
+      - ./client:/usr/src/app
+    ports:
+      - '8081:8080'
 
 volumes:
   database:
